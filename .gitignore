@@ -1,0 +1,52 @@
+# ==========================================
+# 1. THE BLANKET RULE (Ignore all dotfiles/folders)
+# ==========================================
+.*
+~*
+
+# ==========================================
+# 2. GENERAL ROOT EXCEPTIONS
+# ==========================================
+!.*.example
+!.editorconfig
+!.gitattributes
+!.gitignore
+!.gitkeep
+
+# ==========================================
+# 3. OBSIDIAN VAULT WHITELIST
+# ==========================================
+# CRITICAL: Tell Git to look inside the folder
+!.obsidian/
+
+# Now ignore everything inside it...
+.obsidian/*
+
+# ...Except these specific files
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/community-plugins.json
+!.obsidian/core-plugins.json
+
+# ==========================================
+# 4. CLAUDE CODE WHITELIST
+# ==========================================
+# CRITICAL: Tell Git to look inside the folder
+!.claude/
+
+# Explicitly ignore personal data and background cache
+.claude/settings.local.json
+.claude/CLAUDE.local.md
+.claude/sessions/
+.claude/projects/
+.claude/todos/
+.claude/scheduled_tasks.*
+
+# ==========================================
+# 5. OTHER SYSTEM & OS FILES
+# ==========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+ehthumbs.db
+Thumbs.db

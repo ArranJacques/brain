@@ -1,0 +1,23 @@
+filters:
+  and:
+    - categories.contains(link("posts.base"))
+formulas:
+  minutes: if(duration, (duration / 60).round(0), "")
+properties:
+  file.name:
+    displayName: Title
+  formula.minutes:
+    displayName: Minutes
+views:
+  - type: table
+    name: All posts
+    order:
+      - file.name
+      - date
+      - tags
+      - creator
+      - formula.minutes
+      - summary
+    sort:
+      - property: date
+        direction: DESC

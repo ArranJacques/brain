@@ -1,0 +1,18 @@
+filters:
+  and:
+    - file.hasTag("book")
+properties:
+  file.name:
+    displayName: Title
+views:
+  - type: table
+    name: All books
+    order:
+      - file.name
+      - creator
+      - published
+      - date
+      - summary
+    sort:
+      - property: date
+        direction: DESC

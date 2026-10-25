@@ -1,0 +1,23 @@
+filters:
+  and:
+    - file.inFolder("Meetings")
+    - file.hasTag("call")
+formulas:
+  hours: if(duration, (duration / 3600).round(1), "")
+properties:
+  file.name:
+    displayName: Meeting
+  formula.hours:
+    displayName: Hours
+views:
+  - type: table
+    name: All meetings
+    order:
+      - date
+      - file.name
+      - people
+      - formula.hours
+      - summary
+    sort:
+      - property: date
+        direction: DESC
